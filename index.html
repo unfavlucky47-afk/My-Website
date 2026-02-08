@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOSYSTEMS // QUANTUM DASHBOARD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+    <div class="grid-overlay"></div>
+    
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-logo">
+            <div class="nav-logo-icon">
+                <i class="fas fa-atom"></i>
+            </div>
+            <div class="nav-logo-text">NEOSYSTEMS</div>
+        </div>
+        
+        <div class="nav-status">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <div class="status-text" id="system-status">SYSTEM ONLINE</div>
+            </div>
+        </div>
+        
+        <div class="nav-user">
+            <div class="user-avatar">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <div class="user-info">
+                <h3 id="username-display">QUANTUM_USER</h3>
+                <p>ADMINISTRATOR ACCESS</p>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="section-title">NAVIGATION</div>
+                <a href="#profile" class="nav-item active" data-section="profile">
+                    <div class="nav-icon"><i class="fas fa-user"></i></div>
+                    <span>Quantum Profile</span>
+                </a>
+                <a href="#skills" class="nav-item" data-section="skills">
+                    <div class="nav-icon"><i class="fas fa-code"></i></div>
+                    <span>Neural Skills</span>
+                </a>
+                <a href="#experience" class="nav-item" data-section="experience">
+                    <div class="nav-icon"><i class="fas fa-timeline"></i></div>
+                    <span>Timeline Matrix</span>
+                </a>
+                <a href="#projects" class="nav-item" data-section="projects">
+                    <div class="nav-icon"><i class="fas fa-rocket"></i></div>
+                    <span>Quantum Projects</span>
+                </a>
+                <a href="#contact" class="nav-item" data-section="contact">
+                    <div class="nav-icon"><i class="fas fa-transmission"></i></div>
+                    <span>Transmission Hub</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="section-title">SYSTEM TOOLS</div>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-brain"></i></div>
+                    <span>Neural Network</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-database"></i></div>
+                    <span>Data Core</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-shield-alt"></i></div>
+                    <span>Security Suite</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="nav-icon"><i class="fas fa-chart-network"></i></div>
+                    <span>Analytics Grid</span>
+                </a>
+            </div>
+            
+            <button class="logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                TERMINATE SESSION
+            </button>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Profile Section -->
+            <section id="profile" class="content-section active">
+                <div class="profile-header">
+                    <div class="profile-avatar" style="background-image: url('assets/images/your-photo.jpg'); background-size: cover;">
+                    </div>
+                    <div class="profile-info">
+                        <h1 id="profile-name">ALEX CHEN</h1>
+                        <p class="profile-tagline">QUANTUM DEVELOPER • CYBER ARCHITECT • NEO-SYSTEMS ENGINEER</p>
+                        <p class="profile-bio" id="profile-bio">
+                            Visionary developer specializing in quantum computing interfaces, 
+                            neural network architectures, and futuristic system design. 
+                            Currently pioneering next-generation cybernetic interfaces 
+                            for NEOSYSTEMS Quantum Network.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">QUANTUM SCORE</div>
+                            <div class="card-stats">98.7%</div>
+                        </div>
+                        <p>System performance and neural integration rating</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">ACTIVE PROJECTS</div>
+                            <div class="card-stats">12</div>
+                        </div>
+                        <p>Concurrent quantum development initiatives</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">NETWORK UPTIME</div>
+                            <div class="card-stats">99.99%</div>
+                        </div>
+                        <p>Continuous quantum entanglement stability</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">DATA FLOW</div>
+                            <div class="card-stats">42TB/s</div>
+                        </div>
+                        <p>Real-time quantum information processing</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Skills Section -->
+            <section id="skills" class="content-section" style="display: none;">
+                <h2 class="card-title" style="margin-bottom: 30px;">NEURAL SKILL MATRIX</h2>
+                <div class="skills-grid" id="skills-container"></div>
+            </section>
+            
+            <!-- Experience Section -->
+            <section id="experience" class="content-section" style="display: none;">
+                <h2 class="card-title" style="margin-bottom: 30px;">TIMELINE MATRIX</h2>
+                <div class="timeline" id="timeline-container"></div>
+            </section>
+            
+            <!-- Projects Section -->
+            <section id="projects" class="content-section" style="display: none;">
+                <h2 class="card-title" style="margin-bottom: 30px;">QUANTUM PROJECTS</h2>
+                <div class="projects-grid" id="projects-container"></div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section id="contact" class="content-section" style="display: none;">
+                <h2 class="card-title" style="margin-bottom: 30px;">TRANSMISSION HUB</h2>
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom: 20px;">DIRECT TRANSMISSION</h3>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label class="form-label">IDENTIFICATION</label>
+                                <input type="text" class="form-input" placeholder="Your quantum signature" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">MESSAGE FREQUENCY</label>
+                                <input type="email" class="form-input" placeholder="transmission@quantum.net" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">MESSAGE CONTENT</label>
+                                <textarea class="form-textarea" placeholder="Enter your quantum message..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> INITIATE TRANSMISSION
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom: 20px;">QUANTUM CHANNELS</h3>
+                        <p style="margin-bottom: 20px; color: #99f6ff;">
+                            Connect through multiple quantum entanglement channels
+                        </p>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                        
+                        <div style="margin-top: 30px;">
+                            <h4 style="color: #66f6ff; margin-bottom: 15px;">DIRECT FREQUENCIES</h4>
+                            <p style="color: #99f6ff; margin-bottom: 5px;">E-Mail: luckyyadav153595@gmail.com</p>
+                            <p style="color: #99f6ff; margin-bottom: 5px;">Mobile No.: +91 9552308065</p>
+                            <p style="color: #99f6ff;">Entanglement ID: @Lucky_Yadav</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/data/user-data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

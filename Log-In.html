@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEOSYSTEMS // Quantum Access Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+    <!-- Particle background -->
+    <canvas id="particles"></canvas>
+    
+    <!-- Grid overlay -->
+    <div class="grid-overlay"></div>
+    
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <div class="logo-text">NEOSYSTEMS</div>
+            </div>
+            <div class="tagline">QUANTUM ACCESS PORTAL</div>
+        </div>
+        
+        <!-- Login Card -->
+        <div class="login-card">
+            <div class="login-title">SECURE LOGIN</div>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label class="input-label" for="username">IDENTIFICATION</label>
+                    <input type="text" id="username" class="input-field" placeholder="Enter your quantum ID" required>
+                    <div class="input-icon">
+                        <i class="fas fa-user-astronaut"></i>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label class="input-label" for="password">ENCRYPTION KEY</label>
+                    <input type="password" id="password" class="input-field" placeholder="Enter your encryption key" required>
+                    <div class="input-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                </div>
+                
+                <div class="security-indicator">
+                    <div class="security-text">
+                        <span>ENCRYPTION STRENGTH</span>
+                        <span id="security-level">VERY WEAK</span>
+                    </div>
+                    <div class="security-bar">
+                        <div class="security-fill" id="security-fill"></div>
+                    </div>
+                </div>
+                
+                <div class="login-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" class="checkbox">
+                        <label for="remember">Maintain quantum connection</label>
+                    </div>
+                    <a href="#" class="forgot-link">Key recovery protocol</a>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-rocket"></i> INITIATE ACCESS
+                </button>
+            </form>
+            
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <div class="status-text" id="status-text">SYSTEM SECURE // READY FOR AUTHENTICATION</div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>NEOSYSTEMS QUANTUM NETWORK v4.2.1</div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">TERMS OF ACCESS</a>
+                <a href="#" class="footer-link">QUANTUM PRIVACY</a>
+                <a href="#" class="footer-link">TECH SUPPORT</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/js/particles.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>
